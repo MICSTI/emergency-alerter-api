@@ -6,11 +6,23 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var logger = require('winston');
+var fs = require('fs');
 
 var errorHandler = require('./controllers/error-handler');
 
-// config files ====================================
-var config = require("./config");
+// config file ====================================
+// first check if it exists
+var configFilePath = './config.js';
+
+if (!fs.existsSync(configFilePath)) {
+    logger.error('No config file found!');
+    logger.info('Please create a config.js file in the project\'s root folder (you can use config.sample.js as a template)');
+
+    // exit program
+    process.exit(1);
+}
+
+var config = require(configFilePath);
 
 // check if Google Maps API key is set in config file
 if (typeof config.google_maps_key === 'undefined') {
