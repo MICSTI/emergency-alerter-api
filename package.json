@@ -1,0 +1,31 @@
+{
+  "name": "emergency-alerter-api",
+  "version": "1.0.0",
+  "description": "The API backend for the Emergency Alerter cross-platform app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MICSTI/emergency-alerter-api.git"
+  },
+  "keywords": [
+    "node",
+    "API",
+    "backend"
+  ],
+  "author": "Michael Stifter",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/MICSTI/emergency-alerter-api/issues"
+  },
+  "homepage": "https://github.com/MICSTI/emergency-alerter-api#readme",
+  "dependencies": {
+    "body-parser": "1.15.2",
+    "express": "4.15.2",
+    "request": "2.79.0",
+    "winston": "2.3.1"
+  }
+}
