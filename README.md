@@ -16,7 +16,7 @@ The API backend for the Emergency Alerter cross-platform app
 - an important config value is the Google Maps API key. Without it, you won't be able to retrieve actual data from Google Maps
 
 # API routes
-**GET /api/nearest/police?lat=LATITUDE&lng=LONGITUDE&radius=RADIUS_IN_KILOMETRES**
+**GET /api/nearest/police?lat=LATITUDE&lng=LONGITUDE&radius=RADIUS_IN_METRES**
 
 Retrieves all police stations located within the radius of the specified location.
 ```javascript
