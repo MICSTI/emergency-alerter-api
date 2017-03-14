@@ -42,13 +42,13 @@ Response: 200 OK
   ]
 }
 ```
-in case an invalid or no Google Maps API key was provided, the following response will be returned
+in case an invalid or no Google Maps API key was provided on the server, the following response will be returned
 ```javascript
 Response: 401 Unauthorized
 {
   "status": "error",
   "error": {
-    "message": "A valid Google Maps API key must be returned"
+    "message": "A valid Google Maps API key must be provided on the server"
   }
 }
 ```
