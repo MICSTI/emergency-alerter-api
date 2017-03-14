@@ -14,6 +14,7 @@ var errorHandler = require('./controllers/error-handler');
 // first check if it exists
 var configFilePath = './config.js';
 
+// we know that synchronous code is bad in node.js - but in this case it's ok since it will only be executed once on startup
 if (!fs.existsSync(configFilePath)) {
     logger.error('No config file found!');
     logger.info('Please create a config.js file in the project\'s root folder (you can use config.sample.js as a template)');
