@@ -66,10 +66,10 @@ app.get("*", function(req, res) {
 app.use(errorHandler);
 
 // start app ====================================
-app.listen(port);
-
-// console message
-logger.info("API server started on port %d", port);
+app.listen(port, function() {
+    // success message
+    logger.info("API server started on port %d", port);
+});
 
 // expose app
 exports = module.exports = app;
