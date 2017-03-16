@@ -46,8 +46,10 @@ router.get('/', function(req, res, next) {
                 var data = jsonBody.results.map(function(item) {
                     return {
                         name: item.name,
-                        lat: item.geometry.location.lat,
-                        lng: item.geometry.location.lng
+                        location: {
+                            lat: item.geometry.location.lat,
+                            lng: item.geometry.location.lng
+                        }
                     }
                 });
 

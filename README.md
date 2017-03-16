@@ -25,18 +25,24 @@ Response: 200 OK
   "status": "success",
   "data": [
     {
-      "lat": 47.0897329,
-      "lng": 15.4100455,
+      "location": {
+         "lat": 47.0897329,
+         "lng": 15.4100455
+      },
       "name": "Polizeiinspektion Graz - Wiener Straße"
     },
     {
-      "lat": 47.1033302,
-      "lng": 15.4229339,
+      "location": {
+        "lat": 47.1033302,
+        "lng": 15.4229339
+      },
       "name": "Polizeiinspektion Graz-Andritz"
     },
     {
-      "lat": 47.0765347,
-      "lng": 15.4287876,
+      "location": {
+        "lat": 47.0765347,
+        "lng": 15.4287876
+      },
       "name": "Polizeiinspektion Graz-Lendplatz"
     }
   ]
