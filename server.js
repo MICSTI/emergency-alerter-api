@@ -16,18 +16,16 @@ var configFilePath = './config.js';
 
 // we know that synchronous code is bad in node.js - but in this case it's ok since it will only be executed once on startup
 if (!fs.existsSync(configFilePath)) {
-    logger.error('No config file found!');
-    logger.info('Please create a config.js file in the project\'s root folder (you can use config.sample.js as a template)');
-
-    // exit program
-    process.exit(1);
+    logger.info('No config file found - we have to rely on environment variables');
 }
 
-var config = require(configFilePath);
+var config;
 
-// check if Google Maps API key is set in config file
-if (typeof config.google_maps_key === 'undefined') {
-    logger.warn('There is no Google Maps API key set in the config file. The application might not work as expected');
+try {
+	config = require(configFilePath);
+} catch (ex) {
+	// we set it to an empty object - configuration has to work through environment variables (better for Heroku)
+	config = {};
 }
 
 // set port
