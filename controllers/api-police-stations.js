@@ -2,9 +2,17 @@
  * Created by michael.stifter on 10.03.2017.
  */
 var router = require('express').Router();
-var config = require('../config');
 var request = require('request');
 var logger = require('winston');
+
+var configFilePath = '../config.js';
+
+var config = {};
+
+if (fs.existsSync(configFilePath)) {
+	// we use the config file
+	config = require(configFilePath);
+}
 
 /**
  * Reads the IMS data file and returns the content.

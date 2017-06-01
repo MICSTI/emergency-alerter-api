@@ -14,18 +14,15 @@ var errorHandler = require('./controllers/error-handler');
 // first check if it exists
 var configFilePath = './config.js';
 
+// initialize config object
+var config = {};
+
 // we know that synchronous code is bad in node.js - but in this case it's ok since it will only be executed once on startup
 if (!fs.existsSync(configFilePath)) {
     logger.info('No config file found - we have to rely on environment variables');
-}
-
-var config;
-
-try {
+} else {
+	// we use the config file
 	config = require(configFilePath);
-} catch (ex) {
-	// we set it to an empty object - configuration has to work through environment variables (better for Heroku)
-	config = {};
 }
 
 // set port
