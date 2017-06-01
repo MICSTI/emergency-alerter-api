@@ -10,7 +10,7 @@ var logger = require('winston');
  * Reads the IMS data file and returns the content.
  */
 router.get('/', function(req, res, next) {
-    var key = config.google_maps_key;
+    var key = process.env.GOOGLE_MAPS_KEY || config.google_maps_key;
     var lat = req.query.lat || 0;
     var lng = req.query.lng || 0;
     var radius = req.query.radius || 10000;
