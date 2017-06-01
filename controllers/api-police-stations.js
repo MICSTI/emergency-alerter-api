@@ -4,6 +4,7 @@
 var router = require('express').Router();
 var request = require('request');
 var logger = require('winston');
+var fs = require('fs');
 
 var configFilePath = '../config.js';
 
