@@ -62,12 +62,14 @@ router.get('/', function(req, res, next) {
                     }
                 });
 
-                var result = {
+				// change result response to a more Swift-friendly fromat (I hate you, Swift!)
+                /*var result = {
                     status: "success",
                     data: data
-                };
+                };*/
 
-                return  res.status(200).send(result);
+				// now we just send the array
+                return  res.status(200).send(data);
             } else {
                 logger.error(response.statusCode, body);
 
