@@ -49,7 +49,7 @@ app.use('/api/nearest/police', require('./controllers/api-police-stations'));
 
 // index route
 app.get('/', function(req, res) {
-    res.status(200).send("Hi there! This is the API backend for the Emergency Alert cross-platform app");
+    res.status(200).send("Hi there! This is the API backend for the Emergency Alert cross-platform app. <br/><br /><a href='emergencyAlerter://144'>Go to app</a>");
 });
 
 // 404
